@@ -15,15 +15,15 @@ const loadJs = (src, name)=>{
 	})
 }
 
-export default (name)=>{
+export default (name, fn)=>{
 	let com = asyncModules[name]
 	if(com.src){
-		loadJs(com.src, name).then((name)=>{
-			return loadJs(window[name].src, name)
-		})
+		//setTimeout(()=>{
+			return loadJs(com.src, name)
+			.then((name)=>{
+				return loadJs(window[name].src, name)
+			})
+		//},1000)
+		
 	}
-}
-
-export {
-	loadJs
 }

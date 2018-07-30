@@ -6,7 +6,7 @@ import router from './router'
 import loadRouter from './config'
 import utils from './config/utils'
 // import {loadJs} from './config'
-// import modules from './config/modules'
+//import modules from './config/modules'
 
 router.beforeEach((to, from, next)=>{
 	if(to.fullPath == '/'){
@@ -16,9 +16,10 @@ router.beforeEach((to, from, next)=>{
 		return 
 	}
 	const name = to.fullPath.replace(/^\/([^\/]\w+)(\/.*)?/,'$1')
-	console.log(name)
+	
+	
+	loadRouter(name).then((name)=>{})
 
-	loadRouter(name)
 	next()
 })
 

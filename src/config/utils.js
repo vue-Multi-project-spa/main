@@ -1,16 +1,36 @@
 import router from '../router'
 
 window.VK = {
-	registerComponent({ name, component}){
+	//Vue,
+	//Vuex,
+	//store,
+	//getCookie,
+	//setCookie,
+	//setSession
+	//getSession
+	//setLocal
+	//getLocal	
+
+	/*
+	*	id {type: String}  business id(业务id)
+	*	name {type: String} component name (组件名)
+	*	component {type: Objecj} 组件option
+	*/ 
+	registerComponent({ id, name, component}){
 		
-		modules[name] = component
+		VK[id].component[name] = component
 	},
 	registerRouter({ name, routers}){
 
-		console.log('name=',name)
-		console.log(routers)
 		router.addRoutes(routers)
 
-		console.log(router)
-	}
+	},
+	//子模块 信息 结构
+	// {
+			// src: '',
+			// time: '',
+			// component:{
+			// 	name : component
+			// }
+	// }
 }
