@@ -17,9 +17,10 @@ router.beforeEach((to, from, next)=>{
 	}
 	const name = to.fullPath.replace(/^\/([^\/]\w+)(\/.*)?/,'$1')
 	
-	
+	//  need check if it is main project's path
+  	//  need add 404,403 check ?
 	loadRouter(name).then((name)=>{})
-
+	
 	next()
 })
 
