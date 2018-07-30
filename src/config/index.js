@@ -24,15 +24,15 @@ export default function(Vue){
 		if(com.src){
 			const name = com.name
 			modules[name] = name
-			Vue.component(name, (resolve, reject)=>{
+			//Vue.component(name, (resolve, reject)=>{
 				loadJs(com.src).then(()=>{
 					// const src = com.src.replace(/\/[^\/]+\.js/,'/app.js')
 					// console.log(src)
 					// loadJs(src).then(()=>{
-						resolve(modules[name])
+						//resolve(modules[name])
 					//})
 				})
-			})
+			//})
 		}
 	}
 }

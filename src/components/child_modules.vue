@@ -17,7 +17,7 @@ export default {
 		// const component = this.routes[name]
 		// if(component){
 		// }
-			this.currentRouter = modules[name]
+		this.currentRouter = modules[name]
 	}
 }
 </script>

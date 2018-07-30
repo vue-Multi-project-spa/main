@@ -3,9 +3,6 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import initAsyncModules from './config'
-initAsyncModules(Vue)
-
 import utils from './config/utils'
 
 
@@ -18,3 +15,5 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+import initAsyncModules from './config'
+initAsyncModules(Vue)
