@@ -13,6 +13,9 @@ export default {
     }
   },
   created(){
+    document.body.addEventListener('click',()=>{
+      this.$router.push({path:'/test'})
+    },false)
   }
 }
 </script>

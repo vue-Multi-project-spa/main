@@ -1,13 +1,13 @@
-import modules from './modules'
 import router from '../router'
+
 window.VK = {
-	registerCom({name, component, init}){
+	registerComponent({ name, component}){
 		
 		modules[name] = component
-
-		init && init()
 	},
-	registerRouter(routers){
+	registerRouter({ name, routers}){
+
+		console.log('name=',name)
 		console.log(routers)
 		router.addRoutes(routers)
 
