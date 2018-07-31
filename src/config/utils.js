@@ -21,9 +21,7 @@ window.VK = {
 		VK[id].component[name] = component
 	},
 	registerRouter({ name, routers}){
-
 		router.addRoutes(routers)
-
 	},
 	//子模块 信息 结构
 	// {

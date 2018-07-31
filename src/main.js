@@ -8,6 +8,7 @@ import utils from './config/utils'
 // import {loadJs} from './config'
 //import modules from './config/modules'
 
+
 router.beforeEach((to, from, next)=>{
 	if(to.fullPath == '/'){
 		console.log('root path')
@@ -16,7 +17,7 @@ router.beforeEach((to, from, next)=>{
 		return 
 	}
 	const name = to.fullPath.replace(/^\/([^\/]\w+)(\/.*)?/,'$1')
-	
+	console.log(to.fullPath)
 	//  need check if it is main project's path
   	//  need add 404,403 check ?
 	loadRouter(name).then((name)=>{})

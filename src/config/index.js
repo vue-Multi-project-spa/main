@@ -15,12 +15,25 @@ const loadJs = (src, name)=>{
 	})
 }
 
+const loadedJs = {}
+	
+	
+
 export default (name, fn)=>{
 	let com = asyncModules[name]
 	if(com.src){
 		//setTimeout(()=>{
 			return loadJs(com.src, name)
 			.then((name)=>{
+				if(loadedJs[name]){
+					return new Promise((res, rej)=>{
+						res(name)
+					})
+				}
+
+				loadedJs[name] = {
+					src : window[name].src
+				} 
 				return loadJs(window[name].src, name)
 			})
 		//},1000)
