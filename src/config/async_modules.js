@@ -1,3 +1,6 @@
+//import pro from './pro'
+//import dev from './dev'
+
 export default {
 	'test': {
 		name: 'test',

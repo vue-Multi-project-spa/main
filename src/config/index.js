@@ -1,5 +1,5 @@
 import asyncModules from './async_modules'
-import modules from './modules'
+import loadedJs from './modules'
 
 const loadJs = (src, name)=>{
 	const scriptTag = document.createElement('script')
@@ -15,7 +15,6 @@ const loadJs = (src, name)=>{
 	})
 }
 
-const loadedJs = {}
 	
 	
 
@@ -25,9 +24,11 @@ export default (name, fn)=>{
 		//setTimeout(()=>{
 			return loadJs(com.src, name)
 			.then((name)=>{
+
+				console.log(loadedJs[name])
 				if(loadedJs[name]){
 					return new Promise((res, rej)=>{
-						res(name)
+						res('没有加载')
 					})
 				}
 

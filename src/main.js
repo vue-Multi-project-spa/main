@@ -6,7 +6,7 @@ import router from './router'
 import loadRouter from './config'
 import utils from './config/utils'
 // import {loadJs} from './config'
-//import modules from './config/modules'
+import modules from './config/modules'
 
 
 router.beforeEach((to, from, next)=>{
@@ -20,7 +20,9 @@ router.beforeEach((to, from, next)=>{
 	console.log(to.fullPath)
 	//  need check if it is main project's path
   	//  need add 404,403 check ?
-	loadRouter(name).then((name)=>{})
+	loadRouter(name).then((name)=>{
+		console.log(name)
+	})
 	
 	next()
 })

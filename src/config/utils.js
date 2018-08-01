@@ -1,6 +1,8 @@
 import router from '../router'
 
 window.VK = {
+	//跳转
+	//ajax
 	//Vue,
 	//Vuex,
 	//store,
@@ -9,7 +11,7 @@ window.VK = {
 	//setSession
 	//getSession
 	//setLocal
-	//getLocal	
+	//getLocal
 
 	/*
 	*	id {type: String}  business id(业务id)

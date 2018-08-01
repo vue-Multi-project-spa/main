@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1 @click="r">{{ msg }}</h1>
   </div>
 </template>
 
@@ -13,9 +13,14 @@ export default {
     }
   },
   created(){
-    document.body.addEventListener('click',()=>{
-      this.$router.push({path:'/test'})
-    },false)
+    document.onclick = ()=>{
+    }
+  },
+  methods:{
+    r(path){
+      this.$router.push({path:'test'})
+      
+    }
   }
 }
 </script>
