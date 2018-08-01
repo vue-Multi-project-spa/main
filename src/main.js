@@ -25,9 +25,6 @@ router.beforeEach((to, from, next)=>{
 	next()
 })
 
-
-
-
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
