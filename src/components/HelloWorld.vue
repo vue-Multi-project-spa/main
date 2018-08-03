@@ -13,13 +13,16 @@ export default {
     }
   },
   created(){
+    VK.routerSave({
+      fullPath: '/aaa/aaa/ccc'
+    })
     document.onclick = ()=>{
+    VK.backSavedRouter()
     }
   },
   methods:{
     r(path){
       this.$router.push({path:'test'})
-      
     }
   }
 }

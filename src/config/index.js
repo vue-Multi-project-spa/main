@@ -20,7 +20,8 @@ const loadJs = (src, name)=>{
 
 export default (name, fn)=>{
 	let com = asyncModules[name]
-	if(com.src){
+
+	if(com && com.src){
 		//setTimeout(()=>{
 			return loadJs(com.src, name)
 			.then((name)=>{
@@ -39,5 +40,9 @@ export default (name, fn)=>{
 			})
 		//},1000)
 		
+	}else{
+		return new Promise((res, rej)=>{
+						res('没有加载')
+					})
 	}
 }
