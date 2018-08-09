@@ -8,15 +8,19 @@ import loadRouter from './config'
 // import {loadJs} from './config'
 import modules from './config/async_modules'
 
+
+
+import './utils/utils.js'
+
+
 import Vk from './utils'
 
 window.VK = new Vk({router})
 
-console.log(Vue.version)
 router.beforeEach((to, from, next)=>{
 	
-	console.log('to',to.matched)
-	console.log('from',from)
+	//console.log('to',to.matched)
+	//console.log('from',from)
 
 // 	//一级path
 	
@@ -24,12 +28,14 @@ router.beforeEach((to, from, next)=>{
 //	const fromPath = from.path.replace(/(.*)\?.*/,'$1').replace(/\/([^\/]*).*/,'$1')
 
 	
-	console.log(Object.keys(modules).includes(toPath))
+	//console.log(Object.keys(modules).includes(toPath))
 	if(to.matched && to.matched.length === 0 && !Object.keys(modules).includes(toPath)){
-		//next('/404')
-		//return
+		next('/404')
+		console.log(404)
+		return
 	}
 	
+
 
 
 	if(toPath){

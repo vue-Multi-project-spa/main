@@ -64,8 +64,6 @@ function routerSave(option){
 	}
 
 	this.directionalRecord.push(option)
-
-	console.log(this.directionalRecord)
 }
 
 function backSavedRouter(){
