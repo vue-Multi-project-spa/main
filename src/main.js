@@ -6,12 +6,13 @@ import router from './router'
 import loadRouter from './config'
 //import utils from './config/utils'
 // import {loadJs} from './config'
-import modules from './config/modules'
+import modules from './config/async_modules'
 
 import Vk from './utils'
 
 window.VK = new Vk({router})
 
+console.log(Vue.version)
 router.beforeEach((to, from, next)=>{
 	
 	console.log('to',to.matched)
@@ -22,6 +23,13 @@ router.beforeEach((to, from, next)=>{
 	const toPath = to.path.replace(/(.*)\?.*/,'$1').replace(/\/([^\/]*).*/,'$1')
 //	const fromPath = from.path.replace(/(.*)\?.*/,'$1').replace(/\/([^\/]*).*/,'$1')
 
+	
+	console.log(Object.keys(modules).includes(toPath))
+	if(to.matched && to.matched.length === 0 && !Object.keys(modules).includes(toPath)){
+		//next('/404')
+		//return
+	}
+	
 
 
 	if(toPath){
@@ -31,7 +39,7 @@ router.beforeEach((to, from, next)=>{
 	}
 	
 	VK._push(to.fullPath)
-	console.log(VK.records)
+
 	next()
 })
 

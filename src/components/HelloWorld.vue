@@ -17,7 +17,7 @@ export default {
       fullPath: '/aaa/aaa/ccc'
     })
     document.onclick = ()=>{
-    VK.backSavedRouter()
+        //VK.backSavedRouter()
     }
   },
   methods:{

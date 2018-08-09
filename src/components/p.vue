@@ -9,6 +9,9 @@ export default {
 		return {
 			currentRouter: ''
 		}
+	},
+	created(){
+		console.log(this.$route.fullPath)
 	}
 }
 </script>

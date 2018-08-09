@@ -2,8 +2,17 @@ import asyncModules from './async_modules'
 import loadedJs from './modules'
 
 const loadJs = (src, name)=>{
+	let scriptTags = document.querySelectorAll(`.${name}`)
+    if(scriptTags.length){
+        scriptTags.forEach((item)=>{
+          if(item.src === src){
+            document.head.removeChild(item)
+          }
+        })
+    }
 	const scriptTag = document.createElement('script')
 	scriptTag.type = "text/javascript"
+	scriptTag.className = name
 
 
 	return new Promise((resovle, reject)=>{
@@ -27,7 +36,7 @@ export default (name, fn)=>{
 			.then((name)=>{
 
 				console.log(loadedJs[name])
-				if(loadedJs[name]){
+				if(loadedJs[name] && loadedJs[name].src === window[name].src){
 					return new Promise((res, rej)=>{
 						res('没有加载')
 					})
